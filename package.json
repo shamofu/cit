@@ -1,0 +1,26 @@
+{
+  "name": "cit",
+  "version": "0.0.0",
+  "description": "Backward compatible Git.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .gitignore main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamofu/cit.git"
+  },
+  "author": "shamofu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shamofu/cit/issues"
+  },
+  "homepage": "https://github.com/shamofu/cit#readme",
+  "dependencies": {
+    "commander": "^2.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0"
+  }
+}
