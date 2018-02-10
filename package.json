@@ -4,7 +4,7 @@
     "cit": "./bin/cit"
   },
   "version": "0.0.5",
-  "description": "Backward compatible Git.",
+  "description": "Cit is a cheap (backward compatible) Git.",
   "main": "main.js",
   "scripts": {
     "exe": "node bin/cit",
