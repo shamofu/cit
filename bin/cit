@@ -10,14 +10,16 @@ if (!shell.which('git')) {
 
 const cli = cac()
 
+cli.command('init', {
+  desc: 'git init'
+}, () => {
+  shell.exec('git init')
+})
+
 cli.command('*', {
   desc: 'default'
-}, (flags) => {
-  if (flags.help) {
-    cli.showHelp()
-  } else {
-    shell.echo('This is Cit.')
-  }
+}, () => {
+  shell.echo('This is Cit.')
 })
 
 cli.parse()
