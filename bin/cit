@@ -17,15 +17,16 @@ cli.command('init', {
 })
 
 cli.command('clone', {
-  desc: 'git clone'
-}, (input) =>{
+  desc: 'git clone',
+  examples: ['cit clone https://github.com/shamofu/cit.git']
+}, (input) => {
   switch (input.length) {
     case 1: {
       shell.exec(`git clone ${input[0]}`)
       break
     }
     default: {
-      shell.echo('This command allows only one valid argument.')
+      shell.echo('This command needs just one valid argument.')
     }
   }
 })
