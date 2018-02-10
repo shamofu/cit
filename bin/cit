@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 
 const program = require('commander');
+const shelljs = require('shelljs');
 
 const pkginfo = require('../package.json');
+
+if (!shelljs.which('git')) {
+  shelljs.echo('Cit requires Git.');
+  shelljs.exit(0);
+}
 
 program
   .version(pkginfo.version, '-v, --version')
