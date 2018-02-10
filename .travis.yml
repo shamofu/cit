@@ -3,9 +3,9 @@ node_js: lts/*
 os: osx
 osx_image: xcode9.2
 install:
-- yarn install
+  - yarn install
 script:
-- yarn test
+  - yarn test
 deploy:
   provider: npm
   email: shamofu@gmail.com
