@@ -16,6 +16,20 @@ cli.command('init', {
   shell.exec('git init')
 })
 
+cli.command('clone', {
+  desc: 'git clone'
+}, (input) =>{
+  switch (input.length) {
+    case 1: {
+      shell.exec(`git clone ${input[0]}`)
+      break
+    }
+    default: {
+      shell.echo('This command allows only one valid argument.')
+    }
+  }
+})
+
 cli.command('*', {
   desc: 'default'
 }, () => {
