@@ -11,8 +11,8 @@ if (!shelljs.which('git')) {
 }
 
 program
+  .command('init', 'equivalent to git init')
   .version(pkginfo.version, '-v, --version')
-  .parse(process.argv);
   .parse(process.argv);
 
 if (!program.args.length) program.help();
