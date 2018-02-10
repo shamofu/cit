@@ -30,6 +30,6 @@
             "error",
             "always"
         ],
-        "react/display-name": "off"
+        "no-console": 0
     }
 }
