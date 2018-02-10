@@ -9,7 +9,7 @@
   "scripts": {
     "exe": "node bin/cit",
     "test": "echo \"Error: no test specified\"",
-    "lint": "eslint --ignore-path .gitignore main.js"
+    "lint": "eslint --ignore-path .gitignore bin/cit"
   },
   "repository": {
     "type": "git",
