@@ -5,7 +5,6 @@
   },
   "version": "0.0.8",
   "description": "Cit is a cheap (backward compatible) Git.",
-  "main": "main.js",
   "scripts": {
     "exe": "node bin/cit",
     "test": "echo \"Error: no test specified\"",
