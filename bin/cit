@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 
-const program = require('commander');
-const shelljs = require('shelljs');
+const cac = require('cac');
+const shell = require('shelljs');
 
-const pkginfo = require('../package.json');
-
-if (!shelljs.which('git')) {
-  shelljs.echo('Cit requires Git.');
-  shelljs.exit(0);
+if (!shell.which('git')) {
+  shell.echo('Cit requires Git.');
+  shell.exit(0);
 }
 
-program
-  .command('init', 'equivalent to git init')
-  .version(pkginfo.version, '-v, --version')
-  .parse(process.argv);
+const cli = cac();
 
-if (!program.args.length) program.help();
+cli.command('*', {
+  desc: 'default'
+}, (flags) => {
+  if (flags.help) {
+    cli.showHelp();
+  } else {
+    shell.echo('This is Cit.');
+  }
+});
+
+cli.parse();

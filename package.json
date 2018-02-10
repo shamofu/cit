@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/shamofu/cit#readme",
   "dependencies": {
-    "commander": "^2.14.1",
+    "cac": "^4.4.1",
     "shelljs": "^0.8.1"
   },
   "devDependencies": {
