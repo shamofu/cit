@@ -1,7 +1,7 @@
 {
   "name": "cit",
   "bin": "main.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Backward compatible Git.",
   "main": "main.js",
   "scripts": {
