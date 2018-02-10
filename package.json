@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/shamofu/cit#readme",
   "dependencies": {
-    "commander": "^2.14.1"
+    "commander": "^2.14.1",
+    "shelljs": "^0.8.1"
   },
   "devDependencies": {
     "eslint": "^4.17.0"
