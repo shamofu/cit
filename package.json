@@ -1,6 +1,8 @@
 {
   "name": "cit",
-  "bin": "main.js",
+  "bin": {
+    "cit": "./bin/cit"
+  },
   "version": "0.0.1",
   "description": "Backward compatible Git.",
   "main": "main.js",
