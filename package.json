@@ -1,5 +1,6 @@
 {
   "name": "cit",
+  "bin": "main.js",
   "version": "0.0.0",
   "description": "Backward compatible Git.",
   "main": "main.js",
