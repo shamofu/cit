@@ -3,7 +3,7 @@
   "bin": {
     "cit": "./bin/cit"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Backward compatible Git.",
   "main": "main.js",
   "scripts": {
