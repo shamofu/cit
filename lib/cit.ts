@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-const cli = require('commander')
-const shell = require('shelljs')
+import cli = require('commander')
+import shell = require('shelljs')
 const pkginfo = require('../package.json')
 
 if (!shell.which('git')) {
@@ -31,11 +29,11 @@ cli.command('clone <repo>')
     shell.echo('  Example: cit clone https://github.com/shamofu/cit.git')
   })
 
-cli.command('*', { noHelp: true })
+cli.command('*', null, { noHelp: true })
   .description('default')
   .action(() => {
     shell.echo()
-    shell.echo('  Cannot find that command.')
+    shell.echo(`  Cannot find that command.`)
     shell.echo('  Run `cit` to see all available commands.')
   })
 
