@@ -7,13 +7,13 @@ install:
 script:
   - yarn test
 before_deploy:
-  - yarn install
   - yarn build
 deploy:
   provider: npm
   email: shamofu@gmail.com
   api_key:
     secure: MVXwlGdvtpXMidDBHKczpIv6zt1ZS5DgnOszBeCYNxD4Uxn8jpORW0UjYpMppNOHATStdzgUpJGVmAM5Bo8uffbJu+Bfeoohf2a7u7Wov+JTpxHCqAaLT7jbF3k46FBzdIEfJhUVwQupQyLJUYOHrCrTYl0B2LPhYx1go+Qxm5Uv+anCNj5+lYJPgz9PB9da94BOX3akYhxBEo/l2QPyrhiWwqsFpC+AZaXsY90IHiL4XyexT8yEqMLSdErBwFSC95AmHNmHSUr+2JL4az0i3et4M+PFPJL+2jmsEgv3anz4U5JecMjXRHmrthCnReGMacO1mLJhX4OVjYiJGjJcFDC+YKoQ9e16MAg/BZJOLw7Ql1lr+eUwdSK5d1gSuQTimCctlR8vh/YMej592ZVVkAvaf9BjqJSKSc1LZk+ieU76HQxd9hklsTq7AZctkhbY4dQSe4eWJxfkeRqOub1zq7KpvvW5101N4Az18rQVBB/HqJB09njCX1er2cx0H/wGY7Jc2/P4yI6HttI+KWTus/N7WgReP0Z4I2Br2jbAPgBb5YuX3cseRONuyt+kTywV3ZNUEVAQdrbfZbY/wrfoIpfnrzQd3SAjE3dSZgH/RCNLGkgdxVfF7cE2yupJw9cXTIfbIrrHR02QGOx2ivFvsFju7F3+OqvVqXr0ia1mqvY=
+  skip_cleanup: true
   on:
     tags: true
     repo: shamofu/cit
