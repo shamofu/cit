@@ -3,7 +3,7 @@
   "bin": {
     "cit": "bin/cit.js"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Cit is a cheap (backward compatible) Git.",
   "scripts": {
     "exe": "node bin/cit.js",
