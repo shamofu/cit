@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import cli = require('commander')
 import shell = require('shelljs')
 const pkginfo = require('../package.json')
