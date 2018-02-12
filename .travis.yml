@@ -7,6 +7,7 @@ install:
 script:
   - yarn test
 before_deploy:
+  - yarn install
   - yarn build
 deploy:
   provider: npm
