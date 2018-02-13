@@ -25,12 +25,12 @@ function fuzzySearch(fuzzyList) {
     input = input || ''
     return new Promise((resolve) => {
       setTimeout(() => {
-        const fuzzyResult = fuzzy.filter(input, fuzzyList);
+        const fuzzyResult = fuzzy.filter(input, fuzzyList)
         resolve(fuzzyResult.map((el) => {
-          return el.original;
-        }));
-      }, 500);
-    });
+          return el.original
+        }))
+      }, 500)
+    })
   }
 }
 

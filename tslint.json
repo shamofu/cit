@@ -8,9 +8,7 @@
         "no-var-requires": false,
         "object-literal-sort-keys": false,
         "ordered-imports": false,
-        "jsx-no-multiline-js": false,
-        "jsx-boolean-value": false,
-        "semicolon": false
+        "semicolon": [true, "never"]
     },
     "rulesDirectory": []
 }
