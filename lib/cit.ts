@@ -2,6 +2,10 @@
 
 import cli = require('commander')
 import shell = require('shelljs')
+import inquirer = require('inquirer')
+import fuzzy = require('fuzzy')
+
+inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 const pkginfo = require('../package.json')
 
 if (!shell.which('git')) {
@@ -14,6 +18,30 @@ const exec = (cmd, isDev = false) => {
   if (!isDev) {
     shell.exec(cmd)
   }
+}
+
+function fuzzySearch(fuzzyList) {
+  return (_, input) => {
+    input = input || ''
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const fuzzyResult = fuzzy.filter(input, fuzzyList);
+        resolve(fuzzyResult.map((el) => {
+          return el.original;
+        }));
+      }, 500);
+    });
+  }
+}
+
+async function acInquirer(fuzzyList, question = 'What do you want?') {
+  const result = await inquirer.prompt([{
+    type: 'autocomplete',
+    name: 'answer',
+    message: question,
+    source: fuzzySearch(fuzzyList)
+  }])
+  return result.answer
 }
 
 cli.version(pkginfo.version, '-v, --version')
@@ -59,6 +87,13 @@ cli.command('branch [newBranch] [originalBranch]')
         exec(`git branch ${newBranch} ${originalBranch}`)
       }
     }
+  })
+
+cli.command('interactive').alias('i')
+  .description('interactive mode')
+  .action(async () => {
+    const command = await acInquirer(['init', 'clone', 'branch', 'checkout'])
+    shell.echo(command)
   })
 
 cli.command('*', null, { noHelp: true })
