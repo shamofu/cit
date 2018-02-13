@@ -9,9 +9,11 @@ if (!shell.which('git')) {
   shell.exit(0)
 }
 
-const exec = (cmd) => {
+const exec = (cmd, isDev = false) => {
   shell.echo(`$ ${cmd}`)
-  shell.exec(cmd)
+  if (!isDev) {
+    shell.exec(cmd)
+  }
 }
 
 cli.version(pkginfo.version, '-v, --version')
@@ -29,6 +31,20 @@ cli.command('clone <repo>')
   }).on('--help', () => {
     shell.echo()
     shell.echo('  Example: cit clone https://github.com/shamofu/cit.git')
+  })
+
+cli.command('fetch [remote] [remoteBranch]')
+  .description('equivalent to `git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]')
+  .action((remote, remoteBranch) => {
+    if (!remote) {
+      exec('git fetch')
+    } else {
+      if (!remoteBranch) {
+        exec(`git fetch ${remote}`)
+      } else {
+        exec(`git fetch ${remote} +refs/heads/${remoteBranch}:refs/remotes/${remote}/${remoteBranch}`)
+      }
+    }
   })
 
 cli.command('*', null, { noHelp: true })
