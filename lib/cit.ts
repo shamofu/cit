@@ -19,13 +19,13 @@ const exec = (cmd, isDev = false) => {
 cli.version(pkginfo.version, '-v, --version')
 
 cli.command('init')
-  .description('equivalent to `git init`')
+  .description('`git init`')
   .action(() => {
     exec('git init')
   })
 
 cli.command('clone <repo>')
-  .description('equivalent to `git clone <repo>`')
+  .description('`git clone <repo>`')
   .action((repo) => {
     exec(`git clone ${repo}`)
   }).on('--help', () => {
@@ -34,7 +34,7 @@ cli.command('clone <repo>')
   })
 
 cli.command('fetch [remote] [remoteBranch]')
-  .description('equivalent to `git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]')
+  .description('`git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]')
   .action((remote, remoteBranch) => {
     if (!remote) {
       exec('git fetch')
