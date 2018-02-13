@@ -47,6 +47,20 @@ cli.command('fetch [remote] [remoteBranch]')
     }
   })
 
+cli.command('branch [newBranch] [originalBranch]')
+  .description('`git branch [newBranch] [originalBranch]')
+  .action((newBranch, originalBranch) => {
+    if (!newBranch) {
+      exec('git branch -vva')
+    } else {
+      if (!originalBranch) {
+        exec(`git branch ${newBranch}`)
+      } else {
+        exec(`git branch ${newBranch} ${originalBranch}`)
+      }
+    }
+  })
+
 cli.command('*', null, { noHelp: true })
   .description('default')
   .action(() => {
