@@ -34,7 +34,7 @@ cli.command('clone <repo>')
   })
 
 cli.command('fetch [remote] [remoteBranch]')
-  .description('`git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]')
+  .description('`git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]`')
   .action((remote, remoteBranch) => {
     if (!remote) {
       exec('git fetch')
