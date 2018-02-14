@@ -65,14 +65,14 @@ cli.command('fetch [remote] [remoteBranch]')
   .description('`git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]`')
   .option('-p, --prune', '`--prune`')
   .action((remote, remoteBranch, cmd) => {
-    const flag = cmd.prune ? '--prune' : ''
+    const flags = cmd.prune ? '--prune' : ''
     if (!remote) {
-      exec(`git fetch ${flag}`)
+      exec(`git fetch ${flags}`)
     } else {
       if (!remoteBranch) {
-        exec(`git fetch ${remote} ${flag}`)
+        exec(`git fetch ${remote} ${flags}`)
       } else {
-        exec(`git fetch ${remote} +refs/heads/${remoteBranch}:refs/remotes/${remote}/${remoteBranch} ${flag}`)
+        exec(`git fetch ${remote} +refs/heads/${remoteBranch}:refs/remotes/${remote}/${remoteBranch} ${flags}`)
       }
     }
   })
