@@ -63,14 +63,16 @@ cli.command('clone <repo>')
 
 cli.command('fetch [remote] [remoteBranch]')
   .description('`git fetch [remote] +refs/heads/[remoteBranch]:refs/remotes/[remote]/[remoteBranch]`')
-  .action((remote, remoteBranch) => {
+  .option('-p, --prune', 'Add `--prune`')
+  .action((remote, remoteBranch, cmd) => {
+    const flag = cmd.prune ? ' --prune' : ''
     if (!remote) {
-      exec('git fetch')
+      exec('git fetch' + flag)
     } else {
       if (!remoteBranch) {
-        exec(`git fetch ${remote}`)
+        exec(`git fetch ${remote}` + flag)
       } else {
-        exec(`git fetch ${remote} +refs/heads/${remoteBranch}:refs/remotes/${remote}/${remoteBranch}`)
+        exec(`git fetch ${remote} +refs/heads/${remoteBranch}:refs/remotes/${remote}/${remoteBranch}` + flag)
       }
     }
   })
