@@ -5,8 +5,9 @@ import shell = require('shelljs')
 import inquirer = require('inquirer')
 import fuzzy = require('fuzzy')
 
-inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 const pkginfo = require('../package.json')
+
+inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 
 if (!shell.which('git')) {
   shell.echo('Cit requires Git.')
