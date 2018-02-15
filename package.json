@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -p .",
     "test": "yarn build",
-    "lint": "tslint lib/**/*"
+    "lint": "tslint src/**/*"
   },
   "repository": {
     "type": "git",
