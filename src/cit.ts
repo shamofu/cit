@@ -20,7 +20,7 @@ const exec = (cmd, isDev = false) => {
   }
 }
 
-function fuzzySearch(fuzzyList) {
+const fuzzySearch = (fuzzyList) => {
   return (_, input) => {
     input = input || ''
     return new Promise((resolve) => {
@@ -34,7 +34,7 @@ function fuzzySearch(fuzzyList) {
   }
 }
 
-async function acInquirer(fuzzyList, question = 'What do you want?') {
+const acInquirer = async (fuzzyList, question = 'What do you want?') => {
   const result = await inquirer.prompt([{
     type: 'autocomplete',
     name: 'answer',
