@@ -104,6 +104,12 @@ cli.command('merge <branch>')
     exec(`git merge ${branch}`)
   })
 
+cli.command('add <files...>')
+  .description('`git add <files...>`')
+  .action((files) => {
+    exec(`git add ${files.join(' ')}`)
+  })
+
 cli.command('interactive').alias('i')
   .description('interactive mode')
   .action(async () => {
