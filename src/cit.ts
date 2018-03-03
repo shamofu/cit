@@ -79,7 +79,7 @@ cli.command('fetch [remote] [remoteBranch]')
   })
 
 cli.command('branch [newBranch] [originalBranch]')
-  .description('`git branch [newBranch] [originalBranch]')
+  .description('`git branch [newBranch] [originalBranch]`')
   .action((newBranch, originalBranch) => {
     if (!newBranch) {
       exec('git branch -vva')
@@ -90,6 +90,12 @@ cli.command('branch [newBranch] [originalBranch]')
         exec(`git branch ${newBranch} ${originalBranch}`)
       }
     }
+  })
+
+cli.command('merge <branch>')
+  .description('`git merge <branch>`')
+  .action((branch) => {
+    exec(`git merge ${branch}`)
   })
 
 cli.command('interactive').alias('i')
