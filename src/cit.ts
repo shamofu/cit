@@ -92,6 +92,12 @@ cli.command('branch [newBranch] [originalBranch]')
     }
   })
 
+cli.command('checkout <branch>')
+  .description('`git checkout <branch>`')
+  .action((branch) => {
+    exec(`git checkout ${branch}`)
+  })
+
 cli.command('merge <branch>')
   .description('`git merge <branch>`')
   .action((branch) => {
