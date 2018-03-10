@@ -99,9 +99,11 @@ const cit = async () => {
     if (!message) {
       exec(`git commit`)
       exec(`git pull --rebase`)
+      exec('git push')
     } else {
       exec(`git commit -m "${message}"`)
       exec(`git pull --rebase`)
+      exec('git push')
     }
   })
 
