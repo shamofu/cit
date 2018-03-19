@@ -10,7 +10,7 @@ const pkginfo = require('../package.json')
 
 inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 
-const cit = async () => {
+{(async () => {
   if (!shell.which('git')) {
     shell.echo('Cit requires Git.')
     shell.exit(1)
@@ -156,6 +156,4 @@ const cit = async () => {
   if (!process.argv.slice(2).length) {
     cli.help()
   }
-}
-
-cit()
+})()}
