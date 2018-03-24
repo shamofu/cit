@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sham/cit.git"
+    "url": "git+https://github.com/shamofu/cit.git"
   },
-  "author": "sham",
+  "author": "shamofu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sham/cit/issues"
+    "url": "https://github.com/shamofu/cit/issues"
   },
-  "homepage": "https://github.com/sham/cit#readme",
+  "homepage": "https://github.com/shamofu/cit#readme",
   "dependencies": {
     "commander": "^2.15.0",
     "fuzzy": "^0.1.3",
