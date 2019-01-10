@@ -6,10 +6,11 @@ install:
   - yarn
 before_script:
   - yarn build
-  - yarn link
+  - npm link
 script:
   - cit --version
 before_deploy:
+  - git stash --all
   - yarn build
 deploy:
   provider: npm
