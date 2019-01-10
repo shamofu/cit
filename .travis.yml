@@ -1,13 +1,14 @@
 language: node_js
 node_js: lts/*
 os: osx
-osx_image: xcode9.2
+osx_image: xcode10.1
 install:
-  - yarn install
+  - yarn
+before_script:
+  - npm link
 script:
-  - yarn test
+  - cit --version
 before_deploy:
-  - yarn install
   - yarn build
 deploy:
   provider: npm
