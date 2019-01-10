@@ -6,7 +6,7 @@ install:
   - yarn
 before_script:
   - yarn build
-  - npm link
+  - yarn link
 script:
   - cit --version
 before_deploy:
