@@ -11,6 +11,7 @@ script:
   - cit --version
 before_deploy:
   - git stash --all
+  - yarn
   - yarn build
 deploy:
   provider: npm
