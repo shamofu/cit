@@ -9,12 +9,12 @@
     "build": "tsc -p .",
     "lint": "tslint src/**/*"
   },
+  "author": "shamofu",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shamofu/cit.git"
   },
-  "author": "shamofu",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/shamofu/cit/issues"
   },

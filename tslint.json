@@ -1,7 +1,6 @@
 {
     "defaultSeverity": "warning",
     "extends": ["tslint:recommended"],
-    "jsRules": {},
     "rules": {
         "quotemark": [true, "single"],
         "trailing-comma": [true, "never"],
@@ -9,6 +8,5 @@
         "object-literal-sort-keys": false,
         "ordered-imports": false,
         "semicolon": [true, "never"]
-    },
-    "rulesDirectory": []
+    }
 }
