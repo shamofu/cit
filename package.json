@@ -4,7 +4,7 @@
     "cit": "bin/cit.js"
   },
   "version": "0.0.15",
-  "description": "Cit is a cheap (backward compatible) Git.",
+  "description": "Cit is a cheap Git.",
   "scripts": {
     "build": "tsc -p .",
     "lint": "tslint src/**/*"
