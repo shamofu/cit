@@ -3,7 +3,7 @@
   "bin": {
     "cit": "bin/cit.js"
   },
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Cit is a cheap Git.",
   "scripts": {
     "build": "tsc -p .",
