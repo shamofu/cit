@@ -18,7 +18,7 @@ inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 
   const connectivity = await isOnline()
   if (!connectivity) {
-    shell.echo('Cit requires the Internet.')
+    shell.echo('Cit requires the internet connection.')
     shell.exit(1)
   }
 
@@ -26,7 +26,7 @@ inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
     shell.echo(`$ ${cmd}`)
     if (!isDev) {
       if (shell.exec(cmd).code !== 0) {
-        shell.echo('Error: exec failed')
+        shell.echo('Error: exec')
         shell.exit(1)
       }
     }
@@ -146,7 +146,7 @@ inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
   .description('default')
   .action(() => {
     shell.echo()
-    shell.echo(`  Cannot find that command.`)
+    shell.echo('  Cannot find that command.')
     shell.echo('  Run `cit` to see all available commands.')
   })
 
